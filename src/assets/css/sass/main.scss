@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700');
+@import './_01_mixins.scss';
+@import './_02_variables';
+@import './_03_core.scss';
+@import './_04_plugins.scss';
+@import './_05_views.scss';
+
+/** your custom css code **/
+
+.svd_commercial_container {
+  display: none !important;
+}
+
+.survey-list-item {
+  ul {
+    justify-content: space-around;
+    li {
+      margin-right: 10px;
+      i {
+        font-size: 1.2em;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.luci-survey-name {
+  width: calc(100% - 30px);
+}
+
+.edit-profile {
+  .react-datepicker-wrapper {
+    input:disabled {
+      background-color: #e9ecef !important;
+    }
+  }
+  .react-select__control--is-disabled {
+    background-color: #e9ecef !important;
+    .react-select__value-container {
+      background-color: #e9ecef !important;
+    }
+  }
+}
+
+.luci-primary-color {
+  color: $theme-color-1;
+}
+
+.luci-delete-icon {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.luci-sortable {
+  max-width: 500px;
+  .luci-sortable-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.luci-cursor-grabbing {
+  cursor: pointer ;
+}
+
+.luci-cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.luci-share-container {
+  main {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 130px;
+    margin-bottom: 30px;
+  }
+
+  footer {
+    .footer-content {
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+  }
+}
+
+.luci-emaillink-progress-bar {
+  width: 150px;
+  height: 150px;
+}
+
+.luci-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba($theme-color-1, 0.2);
+  border-radius: 50%;
+  border-top-color: $theme-color-1;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  position: absolute;
+  z-index: 1;
+}
+
+// .svd_test_results {
+//   display: none!important;
+// }
+
+.slider + input{
+  
+    display: block!important;
+    position: absolute;
+    width: 30px!important;
+    padding: 2px!important;
+    left: 0px;
+    border: none!important;  
+    pointer-events: none;
+}
+
+// canvas {
+//   width: 100%!important;
+//   height: 300px!important;
+// }
+/* 
+html {
+  background-color: $theme-color-1 !important;
+}
+*/

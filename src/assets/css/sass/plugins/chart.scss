@@ -1,0 +1,12 @@
+.chart-container {
+  margin-top: 10px!important;
+  height: 300px;
+}
+.rtl {
+  .chart {
+    direction: ltr;
+    canvas {
+      direction: rtl;
+    }
+  }
+}
