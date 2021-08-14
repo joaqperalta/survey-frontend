@@ -103,7 +103,7 @@ const AddNewContactModal = ({
     if (address == "") return "required";
     switch(mode) {
       case "sms":
-        var phoneno = /^\d{10}$/;
+        var phoneno = /^\d+$/;
         if (!address.match(phoneno)) return 'not validate phone number';
         break;
       case "facebook": break;
