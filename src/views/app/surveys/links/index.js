@@ -77,6 +77,7 @@ const LinksSurvey = ({
   const [selectedSMSLink, setSelectedSMSLink] = useState(null);
   const [tooltipOpen, setTooltipOpen] = useState("");
   const [modalMode, setModalMode] = useState("");
+  //const [notificationDisplay, setNotificationDisplay] = useState(false);
 
   const toggle = (selString) => {
     if (tooltipOpen != "") {
