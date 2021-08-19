@@ -9,6 +9,7 @@ Table of Contents
 */
 
 const lang = {
+  'email-address': 'Email Address',
   'facebook-userid': 'Facebook userId',
   'twitter-userid': 'Twitter userId',
   'to-xlxs-mode': 'to Excel Mode',

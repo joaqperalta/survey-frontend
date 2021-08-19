@@ -393,7 +393,7 @@ const LinksSurvey = ({
                   </Tooltip>
                 </Colxx>
                 <Colxx md={2} sm={3}>
-                  <Button id="emailLink" color="outline-primary" block size="xs" className="mb-2" onClick={handleAddEmailLink}>
+                  <Button id="emailLink" color="outline-primary" block size="xs" className="mb-2" onClick={() => handleAddLink("email")}>
                     <i className="iconsminds-mail" style={{ fontSize: "18px" }} />
                     {/* <IntlMessages id='link.email-link' /> */}
                   </Button>

@@ -42,7 +42,7 @@ const displayAddressPlaceholder = (mode = "") => {
   if (mode == "sms") return 'Phone Number';
   else if (mode == "facebook") return 'Facebook userId';
   else if (mode == 'twitter') return 'Twitter userId';
-  else return '';
+  else return 'Email address';
 }
 
 const AddNewContactModal = ({

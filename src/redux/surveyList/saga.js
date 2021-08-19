@@ -3,6 +3,7 @@ import { all, call, fork, put, takeEvery } from 'redux-saga/effects';
 import { client } from '../../helpers/client';
 
 import {
+  SURVEY_LIST_GET_TOTAL,
   SURVEY_LIST_GET_LIST,
   SURVEY_LIST_ADD_ITEM, 
   SURVEY_LIST_DELETE_ITEMS, 
@@ -13,6 +14,8 @@ import {
 } from '../actions';
 
 import {
+  getSurveyTotalListSuccess,
+  getSurveyTotalListError,
   getSurveyListSuccess,
   getSurveyListError,
   addSurveyItemSuccess,
@@ -48,6 +51,24 @@ function* getSurveyListItems() {
   }
 }
 
+export function* watchGetTotalList() {
+  yield takeEvery(SURVEY_LIST_GET_TOTAL, getSurveyTotalListItems);
+}
+
+const getSurveyTotalListRequest = async () =>
+  await client
+    .get('/survey/all')
+    .then((res) => res.data)
+    .catch((error) => { throw error.response.data });
+
+function* getSurveyTotalListItems() {
+  try {
+    const response = yield call(getSurveyTotalListRequest);
+    yield put(getSurveyTotalListSuccess(response));
+  } catch (error) {
+    yield put(getSurveyTotalListError(error));
+  }
+}
 
 export function* watchAddItem() {
   yield takeEvery(SURVEY_LIST_ADD_ITEM, addSurveyItem);
@@ -178,5 +199,6 @@ export default function* rootSaga() {
     fork(watchShareItem),
     fork(watchActiveItem),
     fork(watchSetMultiResponsesItem),
+    fork(watchGetTotalList)
   ]);
 }

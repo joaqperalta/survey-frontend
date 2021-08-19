@@ -1,4 +1,7 @@
 import {
+  SURVEY_LIST_GET_TOTAL,
+  SURVEY_LIST_GET_TOTAL_ERROR,
+  SURVEY_LIST_GET_TOTAL_SUCCESS,
   SURVEY_LIST_GET_LIST,
   SURVEY_LIST_GET_LIST_SUCCESS,
   SURVEY_LIST_GET_LIST_ERROR,
@@ -37,6 +40,20 @@ export const getSurveyListSuccess = (items) => ({
 
 export const getSurveyListError = (error) => ({
   type: SURVEY_LIST_GET_LIST_ERROR,
+  payload: error,
+});
+
+export const getSurveyTotalList = () => ({
+  type: SURVEY_LIST_GET_TOTAL,
+});
+
+export const getSurveyTotalListSuccess = (items) => ({
+  type: SURVEY_LIST_GET_TOTAL_SUCCESS,
+  payload: items,
+});
+
+export const getSurveyTotalListError = (error) => ({
+  type: SURVEY_LIST_GET_TOTAL_ERROR,
   payload: error,
 });
 
